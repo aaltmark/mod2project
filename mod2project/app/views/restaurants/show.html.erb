@@ -1,0 +1,17 @@
+<h1><%= @restaurant.name %></h1>
+<h3>Address: <%= @restaurant.location %></h3>
+
+<img src= <%= @restaurant.photo_url %> >
+
+
+<p><%= @restaurant.bio %></p>
+
+<p><%= @restaurant.menu %></p>
+
+<h3><%= "Reviews:" if @restaurant.reviews %></h3>
+<% @restaurant.reviews.each do |review| %>
+    <%= link_to review.user.name, user_path(review.user)%></br>
+    Rating: <%= review.rating %></br>
+    <%= review.content %></br>
+    <%= link_to 'Show Comments', review_path(review) %> </br></br>
+<% end %>

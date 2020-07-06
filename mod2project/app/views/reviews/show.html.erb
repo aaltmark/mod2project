@@ -1,0 +1,10 @@
+<h1>Review for <%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %>, by <%= link_to @review.user.name, user_path(@review.user) %></h1>
+<h3>Rating: <%= @review.rating %></h3>
+
+<p><%= @review.content %></p>
+
+<h3><%= 'Comments:' if @review.comments %></h3>
+<% @review.comments.each do |comment| %>
+    <%= link_to comment.user.name, user_path(comment.user) %> posted at <%= comment.created_at %>:
+    <p><%= comment.content %></p>
+<% end %>
