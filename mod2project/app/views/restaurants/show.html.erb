@@ -6,8 +6,6 @@
 
 <p><%= @restaurant.bio %></p>
 
-<p><%= @restaurant.menu %></p>
-
 <h3><%= "Reviews:" if @restaurant.reviews %></h3>
 <% @restaurant.reviews.each do |review| %>
     <%= link_to review.user.name, user_path(review.user)%></br>

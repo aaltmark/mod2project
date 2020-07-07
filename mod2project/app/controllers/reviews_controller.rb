@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
-        @restaurants = Restaurant.all 
+        @restaurants = Restaurant.all
+        @comment = Comment.new(review_id: params[:review_id])
     end
 
     def create 
