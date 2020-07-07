@@ -7,6 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u1 = User.create(username: "shan99", name: "Shiro Han", password: '123', location: 'Franklin Lakes', photo_url: 'https://i.imgur.com/pZ4FtFC.jpg', bio: 'asdfasdf')
-r1 = Restaurant.create(name: "Chipotle", location: 'Franklin Lakes', photo_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Chipotle_Mexican_Grill_logo.svg/316px-Chipotle_Mexican_Grill_logo.svg.png', bio: 'chipotle mexican restaurant', menu: 'asdfasdfasdf')
+r1 = Restaurant.create(name: "Chipotle", location: 'Franklin Lakes', photo_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Chipotle_Mexican_Grill_logo.svg/316px-Chipotle_Mexican_Grill_logo.svg.png', bio: 'chipotle mexican restaurant')
 review1 = Review.create(user: u1, restaurant: r1, rating: 5, content: 'text here')
 Comment.create(user: u1, review: review1, content: 'text here')
+
+require 'faker'
+
+all_users = User.all 
+all_restaurants = Restaurant.all
+
+40.times do 
+    User.create(username: Faker::Superhero.name, name: Faker::Name.unique.name, password: '1234567', location: Faker::Address.city, photo_url: Faker::Avatar.image(slug: "my-own-slug", size: "10x10", format: "jpg"), bio: Faker::GreekPhilosophers.quote)
+end 
+
+40.times do 
+    Restaurant.create(name: Faker::Restaurant.name, location: Faker::Address.street_address, bio: Faker::Restaurant.description)
+end 
+
+
+Review.create(user: u1, restaurant: all_restaurants.shuffle!.pop, rating: rand(10), content: Faker::Restaurant.review)
+
+

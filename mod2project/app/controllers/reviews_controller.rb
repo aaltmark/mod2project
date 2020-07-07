@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
+        @restaurants = Restaurant.all 
     end
 
     def create 
@@ -38,7 +39,8 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-
+        @review.destroy
+        redirect_to user_path(@review.user)
     end
 
     private
