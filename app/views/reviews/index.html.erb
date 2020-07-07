@@ -1,0 +1,8 @@
+<h1>ShiroMark: everybody eats</h1>
+
+<h2>Reviews:</h2>
+<% @reviews.each do |review| %>
+    <h3><%= review.restaurant.name %> | Review by: <%= review.user.name %></h3>
+    Rating: <%= review.rating %>
+    <p> <%= review.content %></p>
+<% end %>

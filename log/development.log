@@ -2467,3 +2467,403 @@ Completed 500 Internal Server Error in 3608ms (ActiveRecord: 6.3ms | Allocations
 NoMethodError (undefined method `restaurant' for #<Comment:0x00007f88b6486f20>):
   
 app/controllers/comments_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2020-07-07 16:26:22 -0400
+  
+LoadError (cannot load such file -- /Users/shan/Code/Flatiron/mod2/mod2project/mod2project/config/routes.rb):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:55:in `load'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:55:in `load'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:40:in `each'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:20:in `reload!'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:29:in `block in updater'
+activesupport (6.0.3.2) lib/active_support/file_update_checker.rb:83:in `execute'
+railties (6.0.3.2) lib/rails/application/routes_reloader.rb:10:in `execute'
+railties (6.0.3.2) lib/rails/application/finisher.rb:197:in `block (2 levels) in <module:Finisher>'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:428:in `instance_exec'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:200:in `block (2 levels) in halting'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:605:in `block (2 levels) in default_terminator'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:604:in `catch'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:604:in `block in default_terminator'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:201:in `block in halting'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:134:in `run_callbacks'
+activesupport (6.0.3.2) lib/active_support/execution_wrapper.rb:111:in `run!'
+activesupport (6.0.3.2) lib/active_support/reloader.rb:114:in `run!'
+activesupport (6.0.3.2) lib/active_support/execution_wrapper.rb:73:in `block in run!'
+activesupport (6.0.3.2) lib/active_support/execution_wrapper.rb:70:in `tap'
+activesupport (6.0.3.2) lib/active_support/execution_wrapper.rb:70:in `run!'
+activesupport (6.0.3.2) lib/active_support/reloader.rb:63:in `run!'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-07 16:28:07 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shan/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shan/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.8ms | Allocations: 317)
+Completed 200 OK in 208ms (Views: 133.1ms | ActiveRecord: 0.0ms | Allocations: 1799)
+
+
+Started GET "/restaurants" for ::1 at 2020-07-07 16:28:34 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (3.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:3
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 5894)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 231ms (Views: 172.7ms | ActiveRecord: 4.7ms | Allocations: 15682)
+
+
+Started GET "/reviews" for ::1 at 2020-07-07 16:34:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 2245)
+
+
+  
+NameError (uninitialized constant ReviewsController::Reviews):
+  
+app/controllers/reviews_controller.rb:5:in `index'
+Started GET "/reviews" for ::1 at 2020-07-07 16:34:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  Rendered reviews/index.html.erb within layouts/application (Duration: 305.7ms | Allocations: 23833)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 525ms (Views: 444.1ms | ActiveRecord: 13.5ms | Allocations: 30869)
+
+
+Started GET "/reviews" for ::1 at 2020-07-07 16:34:33 -0400
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  Rendered reviews/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2267)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 1.5ms | Allocations: 7234)
+
+
+Started GET "/reviews" for ::1 at 2020-07-07 16:34:33 -0400
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  Rendered reviews/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.7ms | Allocations: 6137)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemovePasswordFromUsers (20200707203858)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "photo_url" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","password","location","photo_url","bio","created_at","updated_at")
+                     SELECT "id","username","name","password","location","photo_url","bio","created_at","updated_at" FROM "users"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "photo_url" varchar DEFAULT NULL, "bio" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","location","photo_url","bio","created_at","updated_at")
+                     SELECT "id","username","name","location","photo_url","bio","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200707203858"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20200707203940)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200707203940"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/reviews" for ::1 at 2020-07-07 17:14:14 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:4
+  [1m[36mRestaurant Load (1.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:5
+  Rendered reviews/index.html.erb within layouts/application (Duration: 382.5ms | Allocations: 21352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 770ms (Views: 670.7ms | ActiveRecord: 10.7ms | Allocations: 53511)
+
+
+Started GET "/sessions" for ::1 at 2020-07-07 17:14:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions/new" for ::1 at 2020-07-07 17:14:26 -0400
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 412.0ms | Allocations: 194598)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 521ms (Views: 492.2ms | ActiveRecord: 0.0ms | Allocations: 199369)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "shan99"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "password_digest" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-07-07 21:15:17.417997"], ["password_digest", "123"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/sessions" for ::1 at 2020-07-07 17:15:37 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"L5eZ8SKk2ag6Z5BmbR6Aj8ZFufWbgVbgueMNHgBxBrtjo0PUmPT7EdDe2ZtuNy5IegPPIVSqL4eTloUh1Gq19w==", "session"=>{"username"=>"shan99", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shan99"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.2ms | Allocations: 1377)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/sessions/new" for ::1 at 2020-07-07 17:17:11 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 473)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 0.0ms | Allocations: 4740)
+
+
+Started POST "/sessions" for ::1 at 2020-07-07 17:17:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"nm6U4tlpETj747P5M4pOE+KY8JSKCnkx56NenMt2PWnSWk7HYzkzgRFa+gQwo+DUXt6GQEUhAFbN1tajH22OJQ==", "session"=>{"username"=>"shan99", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shan99"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["username", "shan99"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "password_digest" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-07-07 21:18:59.743363"], ["password_digest", "$2a$12$AF5Dr9SXNKJMMTT57BmYWuqvmz38rifzcBMk0dlnEW88wSq9s/LOO"], ["id", 1]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 107801ms (ActiveRecord: 4.2ms | Allocations: 53693)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:12:in `create'
+Started GET "/sessions/new" for ::1 at 2020-07-07 17:19:15 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/sessions/new" for ::1 at 2020-07-07 17:19:22 -0400
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 88.4ms | Allocations: 192954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 473ms (Views: 392.6ms | ActiveRecord: 0.0ms | Allocations: 1028523)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 103.8ms | Allocations: 192954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 512ms (Views: 424.9ms | ActiveRecord: 0.0ms | Allocations: 1027246)
+
+
+Started POST "/sessions" for ::1 at 2020-07-07 17:19:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"siCTIhsvKnAh+uXtpPdfx5/Z0xI3Xqmj2pDB+S6fKlH+FEkHoX8IyctDrBCn3vEAI5+lxvh10MTw5UnG+oSZHQ==", "session"=>{"username"=>"shan99", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (46.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shan99"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 1972ms (ActiveRecord: 113.8ms | Allocations: 2330860)
+
+
+Started GET "/users/1" for ::1 at 2020-07-07 17:19:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `find_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mRestaurant Load (2.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (Duration: 1093.2ms | Allocations: 3517921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1841ms (Views: 1340.1ms | ActiveRecord: 66.8ms | Allocations: 4944861)
+
+
+Started GET "/sessions/new" for ::1 at 2020-07-07 17:22:23 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#login as HTML
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 57.7ms | Allocations: 226326)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 425ms (Views: 346.9ms | ActiveRecord: 0.0ms | Allocations: 1205754)
+
+
+Started POST "/sessions" for ::1 at 2020-07-07 17:22:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZF1RDLjuLzSz+6RWLUJSEThu1Rn9g//3/gVsJALJeCgoaYspAr4NjVlC7asua/zWhCijzTKohpDUcOQb1tLLZA==", "session"=>{"username"=>"shan99", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shan99"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 995ms (ActiveRecord: 37.2ms | Allocations: 2509375)
+
+
+Started GET "/users/1" for ::1 at 2020-07-07 17:22:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `find_user'
+Completed 500 Internal Server Error in 45152ms (ActiveRecord: 5.0ms | Allocations: 646384)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:10:in `show'
+Started GET "/users/1" for ::1 at 2020-07-07 17:23:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `find_user'
+Completed 500 Internal Server Error in 15847ms (ActiveRecord: 13.3ms | Allocations: 570113)
+
+
+Started GET "/users/1" for ::1 at 2020-07-07 17:24:01 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:10:in `show'
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `find_user'
+Completed 500 Internal Server Error in 7184ms (ActiveRecord: 19.6ms | Allocations: 2378633)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:10:in `show'
+Started GET "/users/1" for ::1 at 2020-07-07 17:24:18 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:47:in `find_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReview Load (2.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mRestaurant Load (29.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (Duration: 1908.1ms | Allocations: 2086352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3130ms (Views: 2511.9ms | ActiveRecord: 96.6ms | Allocations: 4020946)
+
+
