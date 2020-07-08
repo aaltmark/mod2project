@@ -1,12 +1,18 @@
 class ReviewsController < ApplicationController
+    skip_before_action :authorized, only: [:index, :show]
     before_action :find_review, only: [:show, :edit, :update, :destroy]
 
     def index 
         @reviews = Review.all
+        if session[:user_id] 
+            authorized 
+        end
     end 
 
     def show
-
+        if session[:user_id] 
+            authorized 
+        end
     end
 
     def new 

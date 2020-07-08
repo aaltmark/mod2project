@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+    skip_before_action :authorized, only: [:index, :show]
     before_action :find_restaurant, only: [:show, :edit, :create, :destroy]
 
     def index 
@@ -6,7 +7,9 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-
+        if session[:user_id] 
+            authorized 
+        end
     end
 
     private

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:index, :show, :new, :create]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     def index 
@@ -6,6 +7,9 @@ class UsersController < ApplicationController
     end
 
     def show
+        if session[:user_id] 
+            authorized 
+        end
     end
 
     def new 

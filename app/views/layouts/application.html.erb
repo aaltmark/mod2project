@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <h1>ShiroMark: everybody eats</h1>
+    <% if @current_user %>
+      <ul><%= link_to "Home", reviews_path %>
+          <%= link_to "View Profile", user_path(@current_user)%>
+          <%= link_to "Write Review", new_review_path %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+      </ul>
+      <% else %>
+        <ul><%= link_to "Home", reviews_path %>
+            <%= link_to "Login", login_path %>
+            <%= link_to "Register", new_user_path %>
+        </ul>
+      <% end %>
     <%= yield %>
   </body>
 </html>
