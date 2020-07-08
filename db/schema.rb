@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_203940) do
+ActiveRecord::Schema.define(version: 2020_07_08_223316) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -24,11 +24,15 @@ ActiveRecord::Schema.define(version: 2020_07_07_203940) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "location"
-    t.string "photo_url"
-    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "state"
+    t.string "city"
+    t.string "zip"
+    t.string "price"
+    t.string "phone"
+    t.string "reserve_url"
   end
 
   create_table "reviews", force: :cascade do |t|
