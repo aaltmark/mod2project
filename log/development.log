@@ -6734,3 +6734,736 @@ Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.6ms | Allocations: 
 NoMethodError (undefined method `restaurant' for #<Comment:0x00007fb86f1e02b0>):
   
 app/controllers/comments_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2020-07-08 12:49:38 -0400
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shan/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shan/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 31.2ms | Allocations: 316)
+Completed 200 OK in 102ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 1800)
+
+
+Started GET "/reviews" for ::1 at 2020-07-08 12:49:44 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/reviews/index.html.erb:2
+  [1m[36mRestaurant Load (1.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/index.html.erb:3
+  Rendered reviews/index.html.erb within layouts/application (Duration: 634.0ms | Allocations: 15296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1305ms (Views: 833.1ms | ActiveRecord: 23.2ms | Allocations: 35980)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 12:49:56 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 100.4ms | Allocations: 12747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 115.8ms | ActiveRecord: 4.4ms | Allocations: 18272)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:50:00 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 368.5ms | Allocations: 196513)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 402ms (Views: 390.8ms | ActiveRecord: 1.2ms | Allocations: 202813)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:52:04 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 45.1ms | ActiveRecord: 1.0ms | Allocations: 7536)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:52:10 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 46.6ms | ActiveRecord: 0.8ms | Allocations: 7554)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:52:24 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 55.4ms | ActiveRecord: 0.9ms | Allocations: 7532)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 12:53:11 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"amWS8+JeY2YUWgK+DaopoXS9Yff5FE6FZqamJWsizNV7r34EyFuZwscOwZEJGXyiGi0xc56lKqhUMEaTI3epPA==", "comment"=>{"content"=>"asdfasdf", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.8ms | Allocations: 7117)
+
+
+  
+NoMethodError (undefined method `restaurant' for #<Comment:0x00007fa85e60d818>):
+  
+app/controllers/comments_controller.rb:9:in `create'
+Started GET "/restaurants/1" for ::1 at 2020-07-08 12:54:13 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:18:in `find_restaurant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = ?[0m  [["restaurant_id", 1]]
+  ↳ app/views/restaurants/show.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:11
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 20.7ms | Allocations: 2501)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 60.5ms | ActiveRecord: 1.9ms | Allocations: 8566)
+
+
+Started GET "/users/1" for ::1 at 2020-07-08 12:54:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `find_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2657)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 50.7ms | ActiveRecord: 2.9ms | Allocations: 8643)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 12:54:40 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"fNmzbUq9ctr97GRgFO7WarAE2KX2aTfoVFPBcvfbMXkw7WlI8O1QYxdVLZ0Xx3itDEKucTlCTo9+JklNI8CCNQ==", "comment"=>{"content"=>"asdfasdf", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.2ms | Allocations: 6791)
+
+
+  
+NoMethodError (undefined method `restaurant' for #<Comment:0x00007fa8615018b8>):
+  
+app/controllers/comments_controller.rb:9:in `create'
+Started GET "/reviews/1" for ::1 at 2020-07-08 12:55:12 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 44.2ms | Allocations: 3014)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 126.3ms | ActiveRecord: 2.9ms | Allocations: 8349)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:55:14 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 29.8ms | ActiveRecord: 1.1ms | Allocations: 7552)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:55:17 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 36.1ms | ActiveRecord: 0.8ms | Allocations: 7529)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 12:55:40 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (2.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (1.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 297.5ms | Allocations: 16529)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 861ms (Views: 374.6ms | ActiveRecord: 21.6ms | Allocations: 36574)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:55:43 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1254)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 2449)
+
+
+  
+ActionView::Template::Error (undefined method `restaurant' for nil:NilClass):
+    1: <h1>Review for <%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %>, by <%= link_to @review.user.name, user_path(@review.user) %></h1>
+    2: <h3>Rating: <%= @review.rating %></h3>
+    3: 
+    4: <p><%= @review.content %></p>
+  
+app/views/comments/new.html.erb:1
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:56:04 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 224.7ms | Allocations: 9110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 668ms (Views: 261.1ms | ActiveRecord: 24.7ms | Allocations: 34390)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 12:56:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ed7ccGFomnLYRPXH80c2bYnwY1eobauZAX6sr6VpjJVd6gZV2zi4yzL9vDrwbpiqNbYVg2dG0v4rCySQcXI/2Q==", "comment"=>{"content"=>"asdf", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 118790ms (ActiveRecord: 6.5ms | Allocations: 76907)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:10:in `create'
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:58:42 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (1.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 603.3ms | Allocations: 1961476)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2286ms (Views: 949.5ms | ActiveRecord: 54.1ms | Allocations: 6803392)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 12:58:57 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"I0KtM9KFSeoOzd01y47yQs4G0r8QY3CUPFdpX9MFU3lvdncWaNVrU+R0lMjIp1yFckCka99ICfMWIuFgBx7gNQ==", "comment"=>{"content"=>"hi this is a comment", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (41.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 878ms (ActiveRecord: 45.0ms | Allocations: 1337558)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 12:58:58 -0400
+  [1m[35m (37.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (51.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (2.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (4.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 743.0ms | Allocations: 1272985)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1419ms (Views: 1100.2ms | ActiveRecord: 62.0ms | Allocations: 2643237)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 12:59:29 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (6.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (3.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 350.8ms | Allocations: 824630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 929ms (Views: 675.5ms | ActiveRecord: 13.2ms | Allocations: 2259319)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 12:59:35 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"yTxCosMDtvFNu7mrvf3QlMIy+LIvCErEuqYv78cHQL7Y9q5V6QZMVZ7veoS5ToWXrKKoNki5LumIMM9Zj1IlVw==", "comment"=>{"content"=>"new comment!", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (5.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 787ms (ActiveRecord: 8.2ms | Allocations: 1552548)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 12:59:36 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (5.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (3.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (6.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 642.7ms | Allocations: 1092348)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1399ms (Views: 1038.2ms | ActiveRecord: 27.2ms | Allocations: 2434762)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:00:15 -0400
+  [1m[35m (10.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (2.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 909.3ms | Allocations: 2519737)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2862ms (Views: 1193.9ms | ActiveRecord: 125.1ms | Allocations: 8732874)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 13:00:28 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"+0eR8PhGQxSicI0CvLLOMzvdLs6VccwlM2Ox3FuMw87qjX0H0kO5sHEkTi24AZswVU1+SvLAqAgB9VFqE9mmJw==", "comment"=>{"content"=>"yoyo", "review_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 40875ms (ActiveRecord: 7.6ms | Allocations: 1542964)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:11:in `create'
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:01:46 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (20.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (2.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 493.2ms | Allocations: 1143328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1293ms (Views: 879.0ms | ActiveRecord: 25.9ms | Allocations: 3249149)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 13:01:52 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"jzsYjZ3miq/m75Hm/mXMVlaOgShm31NHfyflegyOVsDDD8KoJ7aoFgxW2Bv9TGKR6sj3/Kn0KiBVUm1F2JXljA==", "comment"=>{"content"=>"hello!!", "review_id"=>"1", "user_id"=>""}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[35m (35.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (2.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 126204ms (ActiveRecord: 41.5ms | Allocations: 1914814)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:11:in `create'
+Started GET "/reviews/1" for ::1 at 2020-07-08 13:03:59 -0400
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:03:59 -0400
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#new as HTML
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (9.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (4.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 1080.2ms | Allocations: 3125318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8896ms (Views: 8083.2ms | ActiveRecord: 18.1ms | Allocations: 30520052)
+
+
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (214.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (4.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (17.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 2957.8ms | Allocations: 3915970)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7767ms (Views: 6187.4ms | ActiveRecord: 239.8ms | Allocations: 15409933)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 13:04:20 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (4.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:04:22 -0400
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by CommentsController#new as HTML
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Parameters: {"review_id"=>"1"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (3.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (10.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (36.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (4.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (3.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (Duration: 2918.1ms | Allocations: 5767918)
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 1699.7ms | Allocations: 3391058)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6848ms (Views: 4756.6ms | ActiveRecord: 12.2ms | Allocations: 16725938)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8052ms (Views: 6969.2ms | ActiveRecord: 62.6ms | Allocations: 18872032)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:04:41 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (9.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 718.7ms | Allocations: 1096181)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1819ms (Views: 1161.7ms | ActiveRecord: 14.7ms | Allocations: 2947721)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 13:04:47 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"ARKFjwtVDUcDe/ply10y3bVW+BEJG/9rT/qjtKv9u5MQ2Gl4IVD349AvOUrP7mfe28aolW6qm0Z9bEMC46jeeg==", "comment"=>{"content"=>"hey hey", "review_id"=>"1", "user_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mCACHE User Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (5.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mComment Create (5.0ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "review_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["review_id", 1], ["content", "hey hey"], ["created_at", "2020-07-08 17:04:48.464539"], ["updated_at", "2020-07-08 17:04:48.464539"]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 16844ms (ActiveRecord: 20.0ms | Allocations: 2692980)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/comments_controller.rb:11:in `create'
+Started GET "/reviews/1" for ::1 at 2020-07-08 13:05:44 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (3.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (8.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  [1m[36mCACHE User Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 1847.0ms | Allocations: 5738083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3721ms (Views: 2091.2ms | ActiveRecord: 229.6ms | Allocations: 12185987)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 13:05:55 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (6.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 991.7ms | Allocations: 1788651)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1612ms (Views: 1418.7ms | ActiveRecord: 16.3ms | Allocations: 3526470)
+
+
+Started GET "/comments/new?review_id=1" for ::1 at 2020-07-08 13:06:07 -0400
+Processing by CommentsController#new as HTML
+  Parameters: {"review_id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `new'
+  Rendering comments/new.html.erb within layouts/application
+  [1m[36mRestaurant Load (28.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/new.html.erb:1
+  Rendered comments/new.html.erb within layouts/application (Duration: 397.1ms | Allocations: 1156366)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1244ms (Views: 742.5ms | ActiveRecord: 32.8ms | Allocations: 3223939)
+
+
+Started POST "/comments" for ::1 at 2020-07-08 13:06:18 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"l612AsOB8zPq3SuomyqOB9p2iGo7ph0rTL/ZhumU/B2GZ5r16YQJlzmJ6IefmdsEtObY7lwXeQZ+KTkwocGZ9A==", "comment"=>{"content"=>"This is the best comment all other comments suck", "review_id"=>"1", "user_id"=>"1"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mReview Load (6.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[36mComment Create (3.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "review_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["review_id", 1], ["content", "This is the best comment all other comments suck"], ["created_at", "2020-07-08 17:06:20.399439"], ["updated_at", "2020-07-08 17:06:20.399439"]]
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:9:in `create'
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 1739ms (ActiveRecord: 22.6ms | Allocations: 2865931)
+
+
+Started GET "/reviews/1" for ::1 at 2020-07-08 13:06:21 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (102.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:56:in `find_review'
+  [1m[36mUser Load (41.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_user'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (2.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 1]]
+  ↳ app/views/reviews/show.html.erb:7
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:8
+  Rendered reviews/show.html.erb within layouts/application (Duration: 1058.0ms | Allocations: 2829554)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1955ms (Views: 1444.9ms | ActiveRecord: 153.1ms | Allocations: 5001402)
+
+
