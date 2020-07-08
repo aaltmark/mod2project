@@ -14,5 +14,6 @@
     <%= f.label :content %>
     <%= f.text_area :content %> </br>
 
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
     <%= f.submit %>
 <% end %>
