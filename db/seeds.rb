@@ -30,7 +30,7 @@
 require 'rest-client'
 require 'json'
 
-response = RestClient.get 'http://opentable.herokuapp.com/api/restaurants?state=ny'
+response = RestClient.get 'http://opentable.herokuapp.com/api/restaurants?state=pa'
 
 formatted_response = JSON.parse(response)
 restaurants = formatted_response['restaurants']
