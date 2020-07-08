@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: pink;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    background-color: grey;
+    border-radius: 50px;
+    transition-duration: 1s;  
+}
+
+.checked {
+    color: orange;
+}
+
+.review-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.review-tile {
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 25px;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mod2project</title>
+    <title>ShiroMark: everybody eats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,7 @@
 
   <body>
     <h1>ShiroMark: everybody eats</h1>
+
     <% if @current_user %>
       <ul><%= link_to "Home", reviews_path %>
           <%= link_to "View Profile", user_path(@current_user)%>
