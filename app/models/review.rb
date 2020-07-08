@@ -9,5 +9,6 @@ class Review < ApplicationRecord
   validates :content, presence: :true
 
   validates_uniqueness_of :user_id, :scope => :restaurant_id, message: "| You've already left a review for this restaurant."
+  
 
 end
