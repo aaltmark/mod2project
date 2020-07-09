@@ -1,18 +1,31 @@
+<div class = 'restaurant-tile'>
 <h1><%= @restaurant.name %></h1>
-<h3 id="dollar_sign"><%= @restaurant.price%>
+<h3 class="dollars">Price Range: <%= @restaurant.display_dollars%></h3>
+<% if @restaurant.avg_rating != nil %>
+<h3><%= "Average Rating:" %>
+    <span class = 'stars'><% @restaurant.avg_rating.times do  %>
+        <span class="fa fa-star checked"></span>
+    <% end %>
+    <% if (10 - @restaurant.avg_rating) > 0 %>
+        <% (10 - @restaurant.avg_rating).times do  %>
+            <span class="fa fa-star"></span>
+        <% end %>
+    <% end %>
+<% end %></span></h3>
+
         
 <h3>Address: <%= @restaurant.address%>, <%=@restaurant.city%>, <%=@restaurant.state%>, <%=@restaurant.zip%></h3>
 
 <h3>Contact at: <%= @restaurant.phone %> or <%= link_to "Make a Reservation", @restaurant.reserve_url%>
-
-<h3><%= "Reviews:" if @restaurant.reviews %></h3>
+</div>
+<h4><%= "Reviews:" if @restaurant.reviews %></h4>
 
 <div class = 'review-container'>
 <% @restaurant.reviews.each do |review| %>
 
 <div class='review-tile'>
     <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %></h4>
-    Rating: <% review.rating.times do  %>
+    <div class = 'stars'><% review.rating.times do  %>
         <span class="fa fa-star checked"></span>
     <% end %>
     <% if (10 - review.rating) > 0 %>
@@ -20,6 +33,7 @@
             <span class="fa fa-star"></span>
         <% end %>
     <% end %>
+    </div>
     <p> <%= review.content %></p>
     <%= link_to "See Full Post and Comments", review_path(review)%>
 </div>

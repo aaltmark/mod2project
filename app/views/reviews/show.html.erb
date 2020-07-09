@@ -1,12 +1,25 @@
+<div class = 'review-tile'>
 <h1>Review for <%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %>, by <%= link_to @review.user.name, user_path(@review.user) %></h1>
-<h3>Rating: <%= @review.rating %></h3>
+<div class = 'stars'> <% @review.rating.times do  %>
+    <span class="fa fa-star checked"></span>
+<% end %>
+<% if (10 - @review.rating) > 0 %>
+    <% (10 - @review.rating).times do  %>
+        <span class="fa fa-star"></span>
+    <% end %>
+<% end %>
+</div>
 
 <p><%= @review.content %></p>
-
+</div>
 <h3><%= 'Comments:' if @review.comments %></h3>
+<div class = 'comment-container'>
 <% @review.comments.each do |comment| %>
+    <div class = 'comment-tile'>
     <%= link_to comment.user.name, user_path(comment.user) %> posted at <%= comment.created_at %>:
     <p><%= comment.content %></p>
+    </div>
 <% end %>
+</div>
 
 <%= link_to "Add Comment", new_comment_path(review_id: @review.id)%>
