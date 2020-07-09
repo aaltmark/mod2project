@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized 
+        flash[:message] = "You need to be logged in to do that action."
         redirect_to login_path unless set_user
+        
     end 
 end
