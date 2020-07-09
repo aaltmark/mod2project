@@ -10,10 +10,14 @@
 <% end %>
 </span>
 </h1>
-
 <p><%= @review.content %></p>
-</div>
-<h3><%= 'Comments:' if @review.comments %></h3>
+</div> </br>
+
+<% if @review.comments != []%>
+    <h3><%= 'Comments:' %></h3>
+<% else %>
+    <h3><%= 'This review has no comments. Click below to be the first!' %></h3>
+<% end %>
 <div class = 'comment-container'>
 <% @review.comments.each do |comment| %>
     <div class = 'comment-tile'>

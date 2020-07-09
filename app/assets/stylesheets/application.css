@@ -37,9 +37,9 @@ a:hover {
 .review-container {
     display: flex;
     flex-flow: column wrap;
-  grid-template-rows: 1fr 0.5fr 1.5fr;
-  gap: 1px 1px;
-  grid-template-areas: ". . . ." ". . . ." ". . . .";
+    grid-template-rows: 1fr 0.5fr 1.5fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . . ." ". . . ." ". . . .";
 }
 
 .review-tile {
