@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class='nav'>
     <% if @current_user %>
       <ul>
@@ -20,9 +21,9 @@
       </ul>
       <% else %>
         <ul>
-          <li><%= link_to "Home", reviews_path %></li>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to "Register", new_user_path %></li>
+          <li class="left"><%= link_to "Home", reviews_path, class: 'link-to-text-color' %></li>
+          <li class="right"><%= link_to "Login", login_path, class: 'link-to-text-color' %></li>
+          <li class="right"><%= link_to "Register", new_user_path, class: 'link-to-text-color' %></li>
         </ul>
       <% end %><br>
       <br>

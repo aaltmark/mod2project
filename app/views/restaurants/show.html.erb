@@ -6,9 +6,22 @@
 <h3>Contact at: <%= @restaurant.phone %> or <%= link_to "Make a Reservation", @restaurant.reserve_url%>
 
 <h3><%= "Reviews:" if @restaurant.reviews %></h3>
+
+<div class = 'review-container'>
 <% @restaurant.reviews.each do |review| %>
-    <%= link_to review.user.name, user_path(review.user)%></br>
-    Rating: <%= review.rating %></br>
-    <%= review.content %></br>
-    <%= link_to 'Show Comments', review_path(review) %> </br></br>
+
+<div class='review-tile'>
+    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %></h4>
+    Rating: <% review.rating.times do  %>
+        <span class="fa fa-star checked"></span>
+    <% end %>
+    <% if (10 - review.rating) > 0 %>
+        <% (10 - review.rating).times do  %>
+            <span class="fa fa-star"></span>
+        <% end %>
+    <% end %>
+    <p> <%= review.content %></p>
+    <%= link_to "See Full Post and Comments", review_path(review)%>
+</div>
 <% end %>
+</div>

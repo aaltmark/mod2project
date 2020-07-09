@@ -1,8 +1,11 @@
 <% if flash[:errors] %>
+<div class= 'error'>
     <% flash[:errors].each do |e| %>
-        <%= e %>
+        <%= e %></br>
     <% end %>
+</div>
 <% end %>
+
 
 <%= form_for @user do |f| %>
     <%= f.label :username %>
