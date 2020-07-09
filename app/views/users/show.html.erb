@@ -1,16 +1,33 @@
-<h1><%= @user.username %> - <%= @user.name %></h1>
+<div class="user-header">
+<p><%= @user.name %> | <%= @user.username %></p>
+</div>
 
-<p><%= @user.bio %></p>
 
+<p id='user-bio'><%= @user.bio %></p>
+
+<div class = 'review-container'>
 <h3><%= "Reviews:" if @user.reviews %></h3>
 <% @user.reviews.each do |review| %>
-    <%= link_to review.restaurant.name, restaurant_path(review.restaurant)%></br>
-    Rating: <%= review.rating %></br>
+<div class='review-tile'>
+
+    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant)%></h4>
+    <% review.rating.times do  %>
+        <span class="fa fa-star checked"></span>
+    <% end %>
+    <% if (10 - review.rating) > 0 %>
+        <% (10 - review.rating).times do  %>
+            <span class="fa fa-star"></span>
+        <% end %>
+    <% end %><br>
     <%= review.content %></br>
     <%= link_to 'Show Comments', review_path(review) %> </br></br>
+</div>
 <% end %>
+</div>
 
 <% if @current_user && @user.id == @current_user.id %>
     <%= link_to 'Create New Review', new_review_path %> </br>
-    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+    <%= button_to 'Edit Profile', edit_user_path(@user) %>
 <% end %>
+
+</div>

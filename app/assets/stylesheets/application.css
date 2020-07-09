@@ -37,6 +37,9 @@ a:hover {
 .review-container {
     display: flex;
     flex-flow: column wrap;
+  grid-template-rows: 1fr 0.5fr 1.5fr;
+  gap: 1px 1px;
+  grid-template-areas: ". . . ." ". . . ." ". . . .";
 }
 
 .review-tile {
@@ -95,7 +98,7 @@ h1 {
 h3 {
     color: rgb(169, 221, 214);
     font-family: Papyrus; 
-    font-size: 45x; 
+    font-size: 38px; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 400; 
@@ -142,3 +145,25 @@ label {
     cursor: pointer;
     width: 100%;
 }
+
+.user-header {
+    color: rgb(169, 221, 214);
+    font-family: Papyrus; 
+    font-size: 35px; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-align: center;
+    font-weight: 400; 
+    line-height: 15.4px;
+    border: 8px;
+    border-width: 8px;
+    border-style: double;
+    border-radius: 35px;
+    border-color: rgb(155, 160, 188);
+    box-shadow: 10px 10px 10px rgb(169, 221, 214);
+}
+
+p#user-bio {
+
+}
+
