@@ -14,9 +14,9 @@
  *= require_self
  */
 
-body {
+/*body {
     background-color: pink;
-}
+}*/
 
 a {
     text-decoration: none;
@@ -24,8 +24,9 @@ a {
 }
 
 a:hover {
-    background-color: grey;
-    border-radius: 50px;
+    color: white;
+    background-color: rgb(169, 221, 214);
+    border-radius: 70px;
     transition-duration: 1s;  
 }
 
@@ -43,4 +44,60 @@ a:hover {
     padding: 10px;
     border: 3px solid black;
     border-radius: 25px;
+}
+
+ul { /* take out bullets and padding */
+    list-style-type: none; /*takes out bullets */
+    margin: 0; 
+    padding: 0;
+    display: block;
+}
+
+li.left {
+    float: left;
+    width: 10%;
+}
+
+li.right {
+    float: right;
+    width: 10%;
+}
+
+li {
+    display: block;
+    padding: 4px;
+}
+
+.nav {
+    background-color: rgb(155, 160, 188);
+    margin: 0px auto;
+    margin-bottom: 10px;
+    padding: 2.25%; 
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+.link-to-text-color {
+    color: rgb(247, 247, 247);
+}
+
+h1 {
+    color: rgb(169, 221, 214);
+    font-family: Papyrus; 
+    font-size: 49px; 
+    font-style: italic; 
+    font-variant: normal; 
+    font-weight: 100; 
+    line-height: 40px;
+}
+
+h3 {
+    color: rgb(169, 221, 214);
+    font-family: Papyrus; 
+    font-size: 45x; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 15.4px;
 }

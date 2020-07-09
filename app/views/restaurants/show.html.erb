@@ -1,10 +1,9 @@
 <h1><%= @restaurant.name %></h1>
-<h3>Address: <%= @restaurant.location %></h3>
+<h3 id="dollar_sign"><%= @restaurant.price%>
+        
+<h3>Address: <%= @restaurant.address%>, <%=@restaurant.city%>, <%=@restaurant.state%>, <%=@restaurant.zip%></h3>
 
-<img src= <%= @restaurant.photo_url %> >
-
-
-<p><%= @restaurant.bio %></p>
+<h3>Contact at: <%= @restaurant.phone %> or <%= link_to "Make a Reservation", @restaurant.reserve_url%>
 
 <h3><%= "Reviews:" if @restaurant.reviews %></h3>
 <% @restaurant.reviews.each do |review| %>

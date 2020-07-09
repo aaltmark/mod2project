@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShiroMark: everybody eats</title>
+    <title>ShiroMark | everybody eats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,20 +10,26 @@
   </head>
 
   <body>
-    <h1>ShiroMark: everybody eats</h1>
-
+    <div class='nav'>
     <% if @current_user %>
-      <ul><%= link_to "Home", reviews_path %>
-          <%= link_to "View Profile", user_path(@current_user)%>
-          <%= link_to "Write Review", new_review_path %>
-          <%= link_to "Logout", logout_path, method: :delete %>
+      <ul>
+        <li class="left"><%= link_to "Home", reviews_path, class: 'link-to-text-color' %></li>
+        <li class="left"><%= link_to "View Profile", user_path(@current_user), class: 'link-to-text-color'%></li>
+        <li class="right"><%= link_to "Write Review", new_review_path, class: 'link-to-text-color' %></li>
+        <li class="right"><%= link_to "Logout", logout_path, method: :delete, class: 'link-to-text-color' %></li>
       </ul>
       <% else %>
-        <ul><%= link_to "Home", reviews_path %>
-            <%= link_to "Login", login_path %>
-            <%= link_to "Register", new_user_path %>
+        <ul>
+          <li><%= link_to "Home", reviews_path %></li>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
         </ul>
-      <% end %>
+      <% end %><br>
+      <br>
+      <br>
+      <h1>ShiroMark // </h1>
+      <h3>everybody eats</h3>
+    </div>
     <%= yield %>
   </body>
 </html>

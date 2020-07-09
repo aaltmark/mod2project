@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<h2>Reviews:</h2>
+<h4>Reviews:</h3>
 <div class = 'review-container'>
 <% @reviews.each do |review| %>
 
 <div class='review-tile'>
-    <h3><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %></h3>
+    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %></h4>
     Rating: <% review.rating.times do  %>
         <span class="fa fa-star checked"></span>
     <% end %>
