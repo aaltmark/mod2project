@@ -24,8 +24,8 @@
 <% @restaurant.reviews.each do |review| %>
 
 <div class='review-tile'>
-    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %></h4>
-    <div class = 'stars'><% review.rating.times do  %>
+    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %>
+    <span class = 'stars'> <% review.rating.times do  %>
         <span class="fa fa-star checked"></span>
     <% end %>
     <% if (10 - review.rating) > 0 %>
@@ -33,7 +33,8 @@
             <span class="fa fa-star"></span>
         <% end %>
     <% end %>
-    </div>
+    </span>
+    </h4>
     <p> <%= review.content %></p>
     <%= link_to "See Full Post and Comments", review_path(review)%>
 </div>
