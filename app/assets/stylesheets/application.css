@@ -44,6 +44,26 @@ a:hover {
     padding: 10px;
     border: 3px solid black;
     border-radius: 25px;
+    background-color: rgb(193, 184, 200);
+}
+
+.comment-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.comment-tile {
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.restaurant-tile {
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
 }
 
 ul { /* take out bullets and padding */
@@ -95,18 +115,23 @@ h1 {
 h3 {
     color: rgb(169, 221, 214);
     font-family: Papyrus; 
-    font-size: 45x; 
+    font-size: 30px; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 400; 
     line-height: 15.4px;
 }
 
+.stars {
+    color: black;
+    font-size: 30px;
+}
+
 form {
     
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -124,7 +149,7 @@ input[type=submit] {
     padding: 14px 20px;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
 }
 
 
@@ -141,4 +166,9 @@ label {
     border: none;
     cursor: pointer;
     width: 100%;
+}
+
+.dollars {
+    color: green;
+    font-size: 40px;
 }
