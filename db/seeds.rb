@@ -27,17 +27,50 @@
 
 #Review.create(user: u1, restaurant: all_restaurants.shuffle!.pop, rating: rand(10), content: Faker::Restaurant.review)
 
-require 'rest-client'
-require 'json'
+# require 'rest-client'
+# require 'json'
 
-response = RestClient.get 'http://opentable.herokuapp.com/api/restaurants?state=pa'
+# response = RestClient.get 'http://opentable.herokuapp.com/api/restaurants?state=pa'
 
-formatted_response = JSON.parse(response)
-restaurants = formatted_response['restaurants']
+# formatted_response = JSON.parse(response)
+# restaurants = formatted_response['restaurants']
 
-for i in 0...restaurants.length
-    Restaurant.create(name: restaurants[i]['name'], address: restaurants[i]['address'], state: restaurants[i]['state'], city: restaurants[i]['city'], zip: restaurants[i]['postal_code'], price: restaurants[i]['price'], phone: restaurants[i]['phone'], reserve_url: restaurants[i]['reserve_url'])
+# for i in 0...restaurants.length
+#     Restaurant.create(name: restaurants[i]['name'], address: restaurants[i]['address'], state: restaurants[i]['state'], city: restaurants[i]['city'], zip: restaurants[i]['postal_code'], price: restaurants[i]['price'], phone: restaurants[i]['phone'], reserve_url: restaurants[i]['reserve_url'])
+# end 
+
+users = [
+    {username: Faker::Superhero.name, name: "Alex Ortiz", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149P2DPGA-5bc46d19c029-512"},
+    {username: Faker::Superhero.name, name: "Andrew Santos", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-UL8B585HP-14e7e4df1c70-512"},
+    {username: Faker::Superhero.name, name: "Andy Agus", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-UQTV5GEFM-59b31a47e35f-512"},
+    {username: Faker::Superhero.name, name: "Berel Levy", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149V71ZRR-179071fd3f16-512"},
+    {username: Faker::Superhero.name, name: "Brandon Gubitosa", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149P2ATLJ-a175739d4005-512"},
+    {username: Faker::Superhero.name, name: "Corey Lynch", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U011LC0U7GW-f7b87b95c922-512"},
+    {username: Faker::Superhero.name, name: "Daniel Reyes", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0136GZTQSG-77e66445bb6c-512"},
+    {username: Faker::Superhero.name, name: "Dolly Desir", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0130BRC3K4-9001c9b22325-512"},
+    {username: Faker::Superhero.name, name: "Jeffrey Musselman", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-UMC62QVAM-019eb6bf04b1-512"},
+    {username: Faker::Superhero.name, name: "Leamsi Escribano", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149P2CRNE-50a2d608ab6c-512"},
+    {username: Faker::Superhero.name, name: "Malcolm Staso", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U014ZJ9F1K2-d9c4863dcd04-512"},
+    {username: Faker::Superhero.name, name: "Maleeha Bhuiyan", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0148BWV805-946025995b60-512"},
+    {username: Faker::Superhero.name, name: "Maxwell Croy", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U014DQ3SKMK-8164c7778a8b-512"},
+    {username: Faker::Superhero.name, name: "Maya Blevins", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149V711B5-b550a063d7f8-512"},
+    {username: Faker::Superhero.name, name: "Melody Soriano", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149P29UH0-611bbf796682-512"},
+    {username: Faker::Superhero.name, name: "Muhammad Hassan", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U014ZJ9C4HE-3e3623a4de5d-512"},
+    {username: Faker::Superhero.name, name: "Paola Dolcemascolo", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-UUNMDGQHG-384b0c170392-512"},
+    {username: Faker::Superhero.name, name: "Rebecca Rosenberg", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U014ZJ9E3RN-0006b89adbe7-512"},
+    {username: Faker::Superhero.name, name: "Rudy Guerrero", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U013V17QKQF-b9866186602f-512"},
+    {username: Faker::Superhero.name, name: "Shadman Ahmed", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149V6VD1R-25fe7ef5f450-512"},
+    {username: Faker::Superhero.name, name: "Stephen Galvan", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U014ZJ9GY6L-aca36055b09d-512"},
+    {username: Faker::Superhero.name, name: "Tashawn Williams", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U7PSME4DA-8b811931b3d9-512"},
+    {username: Faker::Superhero.name, name: "Travis Prol", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U0149P2ES90-c5e480b910c1-512"},
+    {username: Faker::Superhero.name, name: "Eric Kim", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U91CXSUN4-3bac0a7f6a08-512"},
+    {username: Faker::Superhero.name, name: "Greg Dwyer", location: "NYC", bio: Faker::Hipster.sentence, password: "123", photo_url: "https://ca.slack-edge.com/T02MD9XTF-U8H2RA3C1-643c8ce562ef-512"}
+]
+
+users.each do |user| 
+    User.create(user)
 end 
+
 
 #for i in 0...restaurants.length 
     #p restaurants[i]['postal_code']

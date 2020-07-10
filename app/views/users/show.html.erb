@@ -1,15 +1,15 @@
 <div class="user-header">
-<p><%= @user.name %> | <%= @user.username %></p>
+    <p><%= @user.name %> | <%= @user.username %></p>
+    <p id='user-bio'>Location: <%= @user.location %></p>
+    <p id='user-bio'><%= @user.bio %></p>
+    <img src= <%= @user.photo_url %> ></br></br>
 </div>
-
-
-<p id='user-bio'><%= @user.bio %></p>
 
 <div class = 'review-container'>
 <h3><%= "Reviews:" if @user.reviews %></h3>
 <% @user.reviews.each do |review| %>
 <div class='review-tile'>
-    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> | Review by: <%= link_to review.user.name, user_path(review.user) %>
+    <h4><%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> <span class = "review_by">| Review by:</span>  <%= link_to review.user.name, user_path(review.user) %>
     <span class = 'stars'> <% review.rating.times do  %>
         <span class="fa fa-star checked"></span>
     <% end %>

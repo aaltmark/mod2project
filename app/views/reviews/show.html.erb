@@ -1,5 +1,5 @@
 <div class = 'review-tile'>
-<h1>Review for <%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %>, by <%= link_to @review.user.name, user_path(@review.user) %>
+<h1> <span class = "review_by"> Review for </span><%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %><span class = "review_by">, by </span><%= link_to @review.user.name, user_path(@review.user) %>
 <span class = 'stars'> <% @review.rating.times do  %>
     <span class="fa fa-star checked"></span>
 <% end %>

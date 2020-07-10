@@ -1,6 +1,6 @@
 <div class = 'review-tile'>
-<h1>Review for <%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %>, by <%= link_to @review.user.name, user_path(@review.user) %></h1>
-<div class = 'stars'> <% @review.rating.times do  %>
+<h1> <span class = "review_by"> Review for </span><%= link_to @review.restaurant.name, restaurant_path(@review.restaurant) %><span class = "review_by">, by </span><%= link_to @review.user.name, user_path(@review.user) %>
+<span class = 'stars'> <% @review.rating.times do  %>
     <span class="fa fa-star checked"></span>
 <% end %>
 <% if (10 - @review.rating) > 0 %>
@@ -8,10 +8,10 @@
         <span class="fa fa-star"></span>
     <% end %>
 <% end %>
-</div>
-
+</span>
+</h1>
 <p><%= @review.content %></p>
-</div>
+</div> </br>
 
 <h3>New Comment: </h3>
 <%= form_for @comment do |f| %>
